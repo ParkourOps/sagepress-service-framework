@@ -1,6 +1,6 @@
 import { ZodType, z } from "zod";
 
-export class DomainObjectProviderBuilder<
+export class DomainObjectServiceBuilder<
     T extends ZodType
 > {
     #schema: T;
@@ -22,9 +22,9 @@ export class DomainObjectProviderBuilder<
         const defaultValueFactory = this.#defaultValueFactory;
         const randomValueFactory = this.#randomValueFactory;
         return {
-            validator,
-            defaultValueFactory,
-            randomValueFactory
+            validate: validator,
+            makeDefaultValue: defaultValueFactory,
+            generateRandomValue: randomValueFactory 
         }
     }
 }
