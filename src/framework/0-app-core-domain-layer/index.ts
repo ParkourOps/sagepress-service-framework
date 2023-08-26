@@ -11,9 +11,11 @@ export class DomainObjectProviderBuilder<
     }
     setDefaultValueFactory(defaultValueFactory: ()=>z.infer<T>) {
         this.#defaultValueFactory = defaultValueFactory;
+        return this;
     }
     setRandomValueFactory(randomValueFactory: ()=>z.infer<T>) {
         this.#randomValueFactory = randomValueFactory;
+        return this;
     }
     build() {
         const validator = (input: unknown) => this.#schema.safeParse(input);
