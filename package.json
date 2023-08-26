@@ -1,0 +1,39 @@
+{
+  "name": "service-framework",
+  "version": "0.0.1",
+  "description": "A framework to implement services in the Business Tier.",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "app": "ts-node src/app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "framework",
+    "service",
+    "microservice",
+    "services",
+    "microservices",
+    "application",
+    "explicit",
+    "architecture",
+    "event-driven"
+  ],
+  "author": {
+    "name": "Tej Birring",
+    "email": "tej@parkourops.com"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "devDependencies": {
+    "@types/icepick": "^2.3.0",
+    "@types/node": "^20.5.6",
+    "ts-essentials": "^9.3.2",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "icepick": "^2.4.0",
+    "zod": "^3.22.2"
+  }
+}
