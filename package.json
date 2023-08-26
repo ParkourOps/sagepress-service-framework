@@ -6,7 +6,7 @@
   "scripts": {
     "tsc": "tsc",
     "app": "ts-node src/app",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "app-test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "framework",
