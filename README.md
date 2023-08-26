@@ -6,9 +6,51 @@ The framework defines structures/boundaries of service code, as well as store/pr
 
 ## How to Use
 
-__1. Fork:__ Each service will have its own repository, forked from this repository. As a result, all updates to this framework will be automatically-mergeable downstream into all services derived from this framework.
+### Creating a New Service
 
-TO BE COMPLETED
+Each service must have its own repository which will be forked from this repository. As a result, all updates to this framework will be 'pull-able' downstream into all services derived from this framework (it is possible to set up infrastructure for automatic merges).
+
+To create a new service based on this framework, do not use the 'fork' feature of GitHub. Instead, follow these steps:
+
+1. On GitHub, create a new *empty* repository for the service.
+
+2. `git clone` the new repository locally and `cd` into it.
+
+3. Add *the framework repository* as an upstream remote called `service-framework`.:
+
+    ```bash
+
+      git remote add service-framework https://github.com/TejAtParkourOps/sagepress-service-framework
+
+    ```
+
+4. Create a new branch called `framework` whose default upstream/downstream will be the `service-framework`'s `main` branch.
+
+    ```bash
+
+      git fetch service-framework main
+      
+      git checkout -b framework --track service-framework/main
+
+    ```
+
+5. Create the `main` branch for this service.
+
+    ```bash
+
+      git checkout -b main
+
+      git push -u origin main
+
+    ```
+
+6. Install the Node dependencies and get developing!
+
+    ```bash
+
+      npm install
+
+    ```
 
 ## Requirements and Limitations
 
@@ -56,6 +98,6 @@ This layer is described as a *hard* boundary because it is completely agnostic o
 
 * The general assumption of a service is that it:
 
-    1. Obtains one or more domain entities from a repository.
-    2. Executes some logic on those entities, possible changing them.
-    3. Persisting the entities if changes have been made to them.
+    1. Obtain one or more domain entities from a data repository.
+    2. Execute some logic on those entities, possible changing them.
+    3. Persisting changes by pushing them up to the repository.
