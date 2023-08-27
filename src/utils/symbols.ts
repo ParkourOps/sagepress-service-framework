@@ -1,0 +1,1 @@
+export declare const UnimplementedMethod: unique symbol;
